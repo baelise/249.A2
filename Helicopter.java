@@ -13,9 +13,7 @@ public class Helicopter extends Airplane {
 		this.cap = 0;
 	}
 	public Helicopter(Helicopter h) {
-		this.brand = h.brand;
-		this.price = h.price;
-		this.horsepower = h.horsepower;
+		super(h);
 		this.numCyl = h.numCyl;
 		this.cYear = h.cYear;
 		this.cap = h.cap;
