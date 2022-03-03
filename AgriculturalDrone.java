@@ -11,8 +11,7 @@ public class AgriculturalDrone extends UAV {
 		this.cap = 0;
 	}
 	public AgriculturalDrone (AgriculturalDrone a) {
-		this.weight = a.weight;
-		this.price = a.price;
+		super(a);
 		this.brand = a.brand;
 		this.cap = a.cap;
 	}
