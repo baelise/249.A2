@@ -8,9 +8,7 @@ public class Quadcopter extends Helicopter {
 		this.maxSpeed = 0;
 	}
 	public Quadcopter(Quadcopter q) {
-		this.brand = q.brand;
-		this.price = q.price;
-		this.horsepower = q.horsepower;
+		super(q);
 		this.numCyl = q.numCyl;
 		this.cYear = q.cYear;
 		this.maxSpeed = q.maxSpeed;
