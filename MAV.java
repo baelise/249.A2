@@ -12,8 +12,7 @@ public class MAV extends UAV {
 		this.size = 0.0;
 	}
 	public MAV(MAV m) {
-		this.weight = m.weight;
-		this.price = m.price;
+		super(m);
 		this.model = m.model;
 		this.size = m.size;
 	}
