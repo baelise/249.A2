@@ -10,9 +10,7 @@ public class Multirotor extends Helicopter {
 		this.numRot = 0;
 	}
 	public Multirotor (Multirotor m) {
-		this.brand = m.brand;
-		this.price = m.price;
-		this.horsepower = m.horsepower;
+		super(m);
 		this.numCyl = m.numCyl;
 		this.cYear = m.cYear;
 		this.cap = m.cap;
