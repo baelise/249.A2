@@ -1,22 +1,29 @@
+//--------------------------------------------------------------------
+// Elise Proulx (40125538) and Andrei Barbulescu (40208635)
+// COMP 249 - Section S
+// Assignment 2
+// 03/04/2022
+//--------------------------------------------------------------------
 package UAVs;
+import driverPack.FlyingObject;
 
-public class UAV {
+public class UAV extends FlyingObject{
 	protected double weight;
 	protected double price;
-	//CONSTRUCTORS
+	// Constructors
 	public UAV () {
-		this.weight = 0.0;
 		this.price = 0.0;
+		this.weight = 0.0;
 	}
 	public UAV (UAV u) {
-		this.weight = u.weight;
 		this.price = u.price;
+		this.weight = u.weight;
 	}
 	public UAV(double w, double p) {
-		this.weight = w;
 		this.price = p;
+		this.weight = w;
 	}
-	//GETTERS & SETTERS
+	// Getters and setters
 	public double getWeight() {
 		return weight;
 	}
@@ -29,12 +36,12 @@ public class UAV {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	//TO STRING METHOD
+	// toString method
 	@Override
 	public String toString() {
 		return "\n**UAV**\nWeight: " + weight + "kg" + "\nPrice: $" + price;
 	}
-	//EQUALS METHOD
+	// equals method
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null)
@@ -46,5 +53,10 @@ public class UAV {
 		UAV other = (UAV) obj;
 		return Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
 				&& Double.doubleToLongBits(weight) == Double.doubleToLongBits(other.weight);
+	}
+	// copy method
+	@Override
+	public UAV copy() {
+		return new UAV(this); // calls copy UAV constructor
 	}
 }
