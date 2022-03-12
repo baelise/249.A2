@@ -1,3 +1,9 @@
+//--------------------------------------------------------------------
+// Elise Proulx (40125538) and Andrei Barbulescu (40208635)
+// COMP 249 - Section S
+// Assignment 2
+// 03/04/2022
+//--------------------------------------------------------------------
 package Helicopters;
 
 import Airplanes.*;
@@ -5,7 +11,7 @@ public class Helicopter extends Airplane {
 	protected int numCyl;
 	protected int cYear;
 	protected int cap;
-	//CONSTRUCTORS
+	// Constructors
 	public Helicopter () {
 		super();
 		this.numCyl = 0;
@@ -24,7 +30,7 @@ public class Helicopter extends Airplane {
 		this.cYear = cY;
 		this.cap = c;
 	}
-	//GETTERS & SETTERS
+	// Getters and setters
 	public int getNumCyl() {
 		return numCyl;
 	}
@@ -43,14 +49,13 @@ public class Helicopter extends Airplane {
 	public void setCap(int cap) {
 		this.cap = cap;
 	}
-	//TO STRING METHOD
+	// toString method
 	@Override
 	public String toString() {
 		return "\n**Helicopter**\nBrand: " + brand + "\nPrice: $" + price + "\nHorsepower: " + horsepower 
 				+ "\nNumber of Cylinders: " + numCyl + "\nCreation Year: " + cYear + "\nPassenger Capacity: " + cap;
-		//return "**Helicopter**" + super.toString() + "\nNumber of Cylinders: " + numCyl + "\nCreation Year: " + cYear + "\nPassenger Capacity: " + cap;
 	}
-	//EQUALS METHOD
+	// equals method
 	@Override
 	public boolean equals(Object obj) {
 		if (!super.equals(obj))
@@ -62,6 +67,9 @@ public class Helicopter extends Airplane {
 		Helicopter other = (Helicopter) obj;
 		return cYear == other.cYear && cap == other.cap && numCyl == other.numCyl;
 	}
-	
-
+	// copy method
+	@Override
+	public Helicopter copy() {
+		return new Helicopter(this); // calls copy Helicopter constructor
+	}
 }
