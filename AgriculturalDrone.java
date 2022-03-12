@@ -1,10 +1,17 @@
+//--------------------------------------------------------------------
+// Elise Proulx (40125538) and Andrei Barbulescu (40208635)
+// COMP 249 - Section S
+// Assignment 2
+// 03/04/2022
+//--------------------------------------------------------------------
 package DroneMAV;
+// Importing all necessary packages
 import UAVs.*;
 
 public class AgriculturalDrone extends UAV {
-	String brand;
-	int cap;
-	//CONSTRUCTORS
+	private String brand;
+	private int cap;
+	// Constructors
 	public AgriculturalDrone () {
 		super();
 		this.brand = "NONE";
@@ -20,7 +27,7 @@ public class AgriculturalDrone extends UAV {
 		this.brand = b;
 		this.cap = c;
 	}
-	//GETTETRS & SETTERS
+	// Getters and setters
 	public String getBrand() {
 		return brand;
 	}
@@ -33,13 +40,13 @@ public class AgriculturalDrone extends UAV {
 	public void setCap(int cap) {
 		this.cap = cap;
 	}
-	//TO STRING METHOD
+	// toString method
 	@Override
 	public String toString() {
 		return "\n**Agricultural Drone**\nWeight: " + weight + "kg" + "\nPrice: $" + price + "\nBrand: " + brand
 				+ "\nPassenger Capacity: " + cap;
 	}
-	//EQUALS METHOD
+	// equals method
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -50,5 +57,10 @@ public class AgriculturalDrone extends UAV {
 			return false;
 		AgriculturalDrone other = (AgriculturalDrone) obj;
 		return brand == other.brand && cap == other.cap;
+	}
+	// copy method
+	@Override
+	public AgriculturalDrone copy() {
+		return new AgriculturalDrone(this); // calls copy AgriculturalDrone constructor
 	}
 }
