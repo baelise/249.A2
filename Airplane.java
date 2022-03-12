@@ -1,26 +1,33 @@
+//--------------------------------------------------------------------
+// Elise Proulx (40125538) and Andrei Barbulescu (40208635)
+// COMP 249 - Section S
+// Assignment 2
+// 03/04/2022
+//--------------------------------------------------------------------
 package Airplanes;
+ import driverPack.FlyingObject;
 
-public class Airplane {
+public class Airplane extends FlyingObject {
 	protected String brand;
 	protected double price;
 	protected int horsepower;
-	//CONSTRUCTORS
+	// Constructors
 	public Airplane () {
-		this.brand = "NONE";
 		this.price = 0.0;
+		this.brand = "NONE";
 		this.horsepower = 0;
 	}
 	public Airplane(Airplane ap) {
-		this.brand = ap.brand;
 		this.price = ap.price;
+		this.brand = ap.brand;
 		this.horsepower = ap.horsepower;
 	}
 	public Airplane(String b, double p, int h) {
-		this.brand = b;
 		this.price = p;
+		this.brand = b;
 		this.horsepower = h;
 	}
-	//GETTERS & SETTERS
+	// Getters and setters
 	public String getBrand() {
 		return brand;
 	}
@@ -39,13 +46,12 @@ public class Airplane {
 	public void setHorsepower(int horsepower) {
 		this.horsepower = horsepower;
 	}
-	//TO STRING METHOD
+	// toString method
 	@Override
 	public String toString() {
 		return "\n**Airplane**\nBrand: " + brand + "\nPrice: $" + price + "\nHorsepower: " + horsepower;
 	}
-	
-	//EQUALS METHOD
+	// equals method
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null)
@@ -56,5 +62,10 @@ public class Airplane {
 			return true;
 		Airplane other = (Airplane) obj;
 		return brand == other.brand && horsepower == other.horsepower && price == other.price;
+	}
+	// copy method
+	@Override
+	public Airplane copy() {
+		return new Airplane(this); // calls copy Airplane constructor
 	}
 }
