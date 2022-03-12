@@ -1,11 +1,17 @@
+//--------------------------------------------------------------------
+// Elise Proulx (40125538) and Andrei Barbulescu (40208635)
+// COMP 249 - Section S
+// Assignment 2
+// 03/04/2022
+//--------------------------------------------------------------------
 package DroneMAV;
-
+// Importing UAV package
 import UAVs.*;
 
 public class MAV extends UAV {
-	String model;
-	double size;
-	//CONSTRUCTORS
+	private String model;
+	private double size;
+	// Constructors
 	public MAV () {
 		super();
 		this.model = "NONE";
@@ -21,7 +27,7 @@ public class MAV extends UAV {
 		this.model = m;
 		this.size = s;
 	}
-	//GETTERS & SETTERS
+	// Getters and setters
 	public String getModel() {
 		return model;
 	}
@@ -34,13 +40,13 @@ public class MAV extends UAV {
 	public void setSize(double size) {
 		this.size = size;
 	}
-	//TO STRING METHOD
+	// toString method
 	@Override
 	public String toString() {
-		return "\n**Agricultural Drone**\nWeight: " + weight + "kg" + "\nPrice: $" + price + "\nModel: " + model
-				+ "\nSize: " + size;
+		return "\n**MAV**\nWeight: " + weight + "kg" + "\nPrice: $" + price + "\nModel: " + model
+				+ "\nSize: " + size + "cm";
 	}
-	//EQUALS METHOD
+	// equals method
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -52,5 +58,9 @@ public class MAV extends UAV {
 		MAV other = (MAV) obj;
 		return model == other.model && size == other.size;
 	}
-	
+	// copy method
+	@Override
+	public MAV copy() {
+		return new MAV(this); // calls copy MAV constructor
+	}
 }
